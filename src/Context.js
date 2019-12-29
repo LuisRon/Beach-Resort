@@ -11,7 +11,7 @@ class RoomProvider extends Component {
         loading: true
     };
 
-    componentDidMount() {
+    componentDidMount = () => {
         let rooms = this.formatData(items);
         let featuredRooms = rooms.filter(room => room.featured === true);
         this.setState({
@@ -21,6 +21,12 @@ class RoomProvider extends Component {
             loading: false
         });
     }
+
+    getRoom = slug => {
+        let tempRooms = [...this.state.rooms];
+        const room = tempRooms.find(room => room.slug === slug);
+        return room;
+    };
 
     formatData = items => {
         let tempItems = items.map(item => {
@@ -34,7 +40,10 @@ class RoomProvider extends Component {
     }
 
     render() {
-        return <RoomContext.Provider value={{ ...this.state }}>
+        return <RoomContext.Provider value={{
+            ...this.state,
+            getRoom: this.getRoom
+        }}>
             {this.props.children}
         </RoomContext.Provider>
     }
