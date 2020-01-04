@@ -9,15 +9,14 @@ const RoomsContainer = () => {
         <RoomConsumer>
             {
                 (value) => {
-                    const {loading,sortedRooms,rooms} = value;
-                    if(loading){
+                    const { loading, sortedRooms, rooms } = value;
+                    if (loading) {
                         return <Loading />
                     }
                     return (
                         <div>
-                            rooms container
-                        <RoomsFilter rooms={rooms}/>
-                            <RoomsList rooms={sortedRooms}/>
+                            <RoomsFilter rooms={rooms} />
+                            <RoomsList rooms={sortedRooms} />
                         </div>
                     )
 

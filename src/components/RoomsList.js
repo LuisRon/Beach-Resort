@@ -10,7 +10,7 @@ const RoomsList = ({ rooms }) => {
         )
     }
     return (
-        <section className='rooms-list'>
+        <section className='roomslist'>
             <div className='roomslist-center'>
                 {
                     rooms.map(item => {
