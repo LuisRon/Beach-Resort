@@ -503,6 +503,9 @@ h6 {
   .filter-form {
     width: 70vw;
   }
+  .single-extra{
+    display: block
+  }
 }
 @media screen and (min-width: 992px) {
   .filter-form {
